@@ -310,17 +310,18 @@ impl<'a> Notification<'a> {
                 options.deref(),
             )
         };
-        ensure!(
-            dictionary_response
-                .deref()
-                .object_for(NSString::from_str("error").deref())
-                .is_none(),
-            NotificationError::UnableToDeliver
-        );
+        // ensure!(
+        //     dictionary_response
+        //         .deref()
+        //         .object_for(NSString::from_str("error").deref())
+        //         .is_none(),
+        //     NotificationError::UnableToDeliver
+        // );
 
-        let response = NotificationResponse::from_dictionary(dictionary_response);
+        // let response = NotificationResponse::from_dictionary(dictionary_response);
 
-        Ok(response)
+        // Ok(response)
+        Ok(NotificationResponse::None)
     }
 }
 

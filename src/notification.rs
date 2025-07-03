@@ -302,7 +302,7 @@ impl<'a> Notification<'a> {
 
         ensure_application_set()?;
 
-        let dictionary_response = unsafe {
+        let _dictionary_response = unsafe {
             sys::sendNotification(
                 NSString::from_str(self.title).deref(),
                 NSString::from_str(self.subtitle.unwrap_or("")).deref(),
